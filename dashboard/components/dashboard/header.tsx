@@ -34,7 +34,7 @@ export function Header({ filters, onFilterChange, onRefresh, lastUpdated }: Head
 
           {/* Filters & Actions */}
           <div className="flex flex-wrap items-center gap-3">
-            <Select value={filters.region} onValueChange={(value) => onFilterChange({ ...filters, region: value })}>
+            <Select value={filters.region} onValueChange={(value: any) => onFilterChange({ ...filters, region: value })}>
               <SelectTrigger className="w-[140px] bg-secondary/30 border-border text-foreground">
                 <SelectValue placeholder="Region" />
               </SelectTrigger>
@@ -50,7 +50,7 @@ export function Header({ filters, onFilterChange, onRefresh, lastUpdated }: Head
 
             <Select
               value={filters.timeRange}
-              onValueChange={(value) => onFilterChange({ ...filters, timeRange: value as FilterState["timeRange"] })}
+              onValueChange={(value: string) => onFilterChange({ ...filters, timeRange: value as FilterState["timeRange"] })}
             >
               <SelectTrigger className="w-[130px] bg-secondary/30 border-border text-foreground">
                 <SelectValue placeholder="Time Range" />
@@ -66,7 +66,7 @@ export function Header({ filters, onFilterChange, onRefresh, lastUpdated }: Head
 
             <Select
               value={filters.technology}
-              onValueChange={(value) => onFilterChange({ ...filters, technology: value as FilterState["technology"] })}
+              onValueChange={(value: string) => onFilterChange({ ...filters, technology: value as FilterState["technology"] })}
             >
               <SelectTrigger className="w-[100px] bg-secondary/30 border-border text-foreground">
                 <SelectValue placeholder="Tech" />
